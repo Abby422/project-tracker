@@ -64,11 +64,17 @@ public class Project {
         return commonIssues;
     }
 
-    public static ArrayList<Project> getInstances() {
+    public static ArrayList<Project> getAll() {
         return instances;
     }
 
     public int getId() {
         return id;
+    }
+    public static Project findById(int id){
+        return instances.get(id-1); //why minus 1? See if you can figure it out.
+    }
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 }

@@ -18,6 +18,12 @@ public class App {
 //            model.put("content",request.session().attribute("content"));
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
-
+        get("/allprojects", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            ArrayList<Project> projects = Project.getAll();
+            model.put("projects", projects);
+//            model.put("content",request.session().attribute("content"));
+            return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
