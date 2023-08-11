@@ -14,28 +14,28 @@ public class Project {
     private boolean status;
     private LocalDateTime createdAt;
     private int id;
-    public Project(String department,String assetName, String productOwner,
-                   String projectDescription, String gitLink,String projectBenefit,String deployedServer,
-                   String commonIssues) {
-        this.department = department;
-        this.assetName = assetName;
-        this.productOwner = productOwner;
-        this.projectDescription = projectDescription;
-        this.gitLink = gitLink;
-        this.projectBenefit = projectBenefit;
-        this.deployedServer = deployedServer;
-        this.commonIssues = commonIssues;
-        this.status = true;
-        this.createdAt = LocalDateTime.now();
-        instances.add(this);
-        this.id = instances.size();
-
-    }
+//    public Project(String department,String assetName, String productOwner,
+//                   String projectDescription, String gitLink,String projectBenefit,String deployedServer,
+//                   String commonIssues) {
+//        this.department = department;
+//        this.assetName = assetName;
+//        this.productOwner = productOwner;
+//        this.projectDescription = projectDescription;
+//        this.gitLink = gitLink;
+//        this.projectBenefit = projectBenefit;
+//        this.deployedServer = deployedServer;
+//        this.commonIssues = commonIssues;
+//        this.status = true;
+//        this.createdAt = LocalDateTime.now();
+//        instances.add(this);
+//        this.id = instances.size();
+//
+//    }
 
     public Project(String name, String description, String department) {
         this.department = department;
-        this.assetName = assetName;
-        this.projectDescription = projectDescription;
+        this.assetName = name;
+        this.projectDescription = description;
         this.status = true;
         this.createdAt = LocalDateTime.now();
         instances.add(this);

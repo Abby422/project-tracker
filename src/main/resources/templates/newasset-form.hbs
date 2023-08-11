@@ -1,23 +1,23 @@
 {{#partial "content"}}
 
-            <form action="/projects/new">
-                <select class="form-select" aria-label="Default select example" id="department">
+            <form action="/projects/new" method="post">
+                <select class="form-select" aria-label="Default select example" id="department" name="department">
                     <option selected><b>Select Department</b></option>
-                    <option value="de">Digital Engineering</option>
-                    <option value="fs">Financial Services</option>
-                    <option value="cb">Core Billing</option>
+                    <option value="DigitalEngineering">Digital Engineering</option>
+                    <option value="FinancialServices<">Financial Services</option>
+                    <option value="CoreBilling">Core Billing</option>
                 </select><br>
                 <label class="form-label rounded" for="asset-name"><b>Asset Name</b></label>
-                <input type="name" id="asset-name" class="form-control"/>
+                <input type="text" name="asset-name" id="asset-name" class="form-control"/>
                 <label class="form-label rounded-pill" for="product-owner"><b>Product Owner</b></label>
-                <input type="name" id="product-owner" class="form-control" />
-                <label class="form-label rounded-pill" for="project-description"><b>Project Description</b></label>
-                <input type="text" id="project-description" class="form-control" />
+                <input type="text" id="product-owner" class="form-control" />
+                <label class="form-label rounded-pill"  for="project-description"><b>Project Description</b></label>
+                <input type="text" name="project-description" id="project-description" class="form-control" />
                 <label class="form-label rounded-pill" for="git-link"><b>Link to GIT</b></label>
-                <input type="name" id="git-link" class="form-control" />
+                <input type="text" name="git-link" id="git-link" class="form-control" />
                 <label class="form-label rounded-pill" for="project-benefit"><b>Project Benefit</b></label>
-                <input type="text" id="project-benefit" class="form-control" /><br>
-                <select class="form-select" aria-label="Default select example">
+                <input type="text" name="project-benefit" id="project-benefit" class="form-control" /><br>
+                <select class="form-select" aria-label="Default select example" name="deployed-server">
                     <option selected><b>Deployed Server</b></option>
                     <option value="k8">Kubernetes</option>
                     <option value="aws">AWS</option>
