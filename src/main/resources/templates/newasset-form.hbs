@@ -2,17 +2,30 @@
 
             <form action="">
                 <select class="form-select" aria-label="Default select example">
-                    <option selected>Select Department</option>
+                    <option selected><b>Select Department</b></option>
                     <option value="de">Digital Engineering</option>
                     <option value="fs">Financial Services</option>
                     <option value="cb">Core Billing</option>
-                </select>
+                </select><br>
                 <label class="form-label rounded" for="asset-name"><b>Asset Name</b></label>
                 <input type="name" id="asset-name" class="form-control"/>
                 <label class="form-label rounded-pill" for="product-owner"><b>Product Owner</b></label>
                 <input type="name" id="product-owner" class="form-control" />
-                <label class="form-label rounded-pill" for="product-owner"><b>Link to GIT</b></label>
-                <input type="name" id="product-owner" class="form-control" />
+                <label class="form-label rounded-pill" for="project-description"><b>Project Description</b></label>
+                <input type="text" id="project-description" class="form-control" />
+                <label class="form-label rounded-pill" for="git-link"><b>Link to GIT</b></label>
+                <input type="name" id="git-link" class="form-control" />
+                <label class="form-label rounded-pill" for="project-benefit"><b>Project Benefit</b></label>
+                <input type="text" id="project-benefit" class="form-control" /><br>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected><b>Deployed Server</b></option>
+                    <option value="k8">Kubernetes</option>
+                    <option value="aws">AWS</option>
+                    <option value="os">Openshift</option>
+                </select>
+                <label class="form-label rounded-pill" for="project-issues"><b>Common Issues</b></label>
+                <input type="text" id="project-issues" class="form-control" />
+                <button type="submit" class="btn btn-default">Add new project</button>
             </form>
 
 {{/partial}}
