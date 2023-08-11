@@ -23,7 +23,16 @@ public class App {
             ArrayList<Project> projects = Project.getAll();
             model.put("projects", projects);
 //            model.put("content",request.session().attribute("content"));
-            return new ModelAndView(model, "index.hbs");
+            return new ModelAndView(model, "allprojects.hbs");
+        }, new HandlebarsTemplateEngine());
+        post("/projects/new", (request, response) -> { //URL to make new post on POST route
+            Map<String, Object> model = new HashMap<String, Object>();
+            String name     = request.queryParams("asset-name");
+            String description = request.queryParams("project-description");
+            String department = request.queryParams("department");
+            Project newProject = new Project(name,description,department);
+            model.put("projects",newProject);
+            return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }

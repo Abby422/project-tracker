@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Project {
-    private String Department;
+    private String department;
     private String assetName;
     private String productOwner;
     private String projectDescription;
@@ -14,10 +14,10 @@ public class Project {
     private boolean status;
     private LocalDateTime createdAt;
     private int id;
-    public Project(String Department,String assetName, String productOwner,
+    public Project(String department,String assetName, String productOwner,
                    String projectDescription, String gitLink,String projectBenefit,String deployedServer,
                    String commonIssues) {
-        this.Department = Department;
+        this.department = department;
         this.assetName = assetName;
         this.productOwner = productOwner;
         this.projectDescription = projectDescription;
@@ -32,8 +32,18 @@ public class Project {
 
     }
 
+    public Project(String name, String description, String department) {
+        this.department = department;
+        this.assetName = assetName;
+        this.projectDescription = projectDescription;
+        this.status = true;
+        this.createdAt = LocalDateTime.now();
+        instances.add(this);
+        this.id = instances.size();
+    }
+
     public String getDepartment() {
-        return Department;
+        return department;
     }
 
     public String getAssetName() {

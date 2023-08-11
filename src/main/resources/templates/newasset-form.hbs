@@ -1,7 +1,7 @@
 {{#partial "content"}}
 
-            <form action="">
-                <select class="form-select" aria-label="Default select example">
+            <form action="/projects/new">
+                <select class="form-select" aria-label="Default select example" id="department">
                     <option selected><b>Select Department</b></option>
                     <option value="de">Digital Engineering</option>
                     <option value="fs">Financial Services</option>
@@ -24,7 +24,7 @@
                     <option value="os">Openshift</option>
                 </select>
                 <label class="form-label rounded-pill" for="project-issues"><b>Common Issues</b></label>
-                <input type="text" id="project-issues" class="form-control" />
+                <input type="text" id="project-issues" class="form-control" /><br>
                 <button type="submit" class="btn btn-default">Add new project</button>
             </form>
 
