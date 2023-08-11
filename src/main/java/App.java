@@ -10,6 +10,7 @@ public class App {
         staticFileLocation("/public");
         get("/projects/new", (request, response) -> { //URL to make new project on POST route
             Map<String, Object> model = new HashMap<String, Object>();
+            model.put("useremail", request.session().attribute("useremail"));
             return new ModelAndView(model, "newasset-form.hbs");
         }, new HandlebarsTemplateEngine());
 //        <view the homepage >
@@ -33,6 +34,13 @@ public class App {
             Project newProject = new Project(name,description,department);
             model.put("projects",newProject);
             return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+        post("/", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String inputtedUsername = request.queryParams("useremail");
+            request.session().attribute("useremail", inputtedUsername);
+            model.put("useremail", inputtedUsername);
+            return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }
