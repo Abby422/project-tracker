@@ -1,0 +1,31 @@
+{{#partial "content"}}
+
+    <h1 style="text-color:black;">Project list!</h1>
+    {{#if projects}} <!--if projects exist, then -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Department</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">-</th>
+        </tr>
+        </thead>
+        <tbody>
+    {{#each projects }} <!--loop-->
+    <tr>
+        <th scope="row">{{id}}</th>
+        <td style="text-color:black;">{{department}}</td>
+        <td style="text-color:black;">{{assetName}}</td>
+        <td style="text-color:black;">{{projectDescription}}</td>
+        <td><a href="/projects/{{id}}">Click to see more details</a></td>
+    </tr>
+    {{/each}}</tbody>
+    </table>
+    {{else}} <!--no posts!-->
+    <p>No projects to display!</p>
+    {{/if}}
+
+{{/partial}}
+{{> navbar.hbs}}
